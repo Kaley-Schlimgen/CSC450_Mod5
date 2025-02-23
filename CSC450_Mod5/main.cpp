@@ -16,27 +16,7 @@ int main () {
     string userInput;
     ifstream providedFile;
     string filePath = "/Users/kaleyschlimgen/Desktop/CSC450_CT5_mod5.txt";
-/*
-    //open file and read contents of file
-    providedFile.open(filePath);
-    if (providedFile.is_open()) {
-        cout << "File Opened Successfully\n";
-        cout << "File Contents:\n";
-        cout << "\n";
-        string line;
 
-        //read the file contents
-        while (getline(providedFile, line)) {
-            cout << line << endl;
-            cout << endl;
-        }
-        providedFile.close();
-    }
-    else {
-        cout << "Unable to open file";
-        return 1;
-    }
-    */
         //append the file
         ofstream appendFile(filePath, ios::app);
         if (appendFile.is_open()) {
@@ -58,6 +38,16 @@ int main () {
             return 1;
         }
     
+    //ifstream originalFile (bc...)
+    //ofstream reversedFile (bc...)
+    
+    //get contents of originalFile
+    
+    //add reversal method
+    
+    //save reversed contents to reversedFile
+    
+   
     cout <<"Exiting Program\n";
     return 0;
 }
