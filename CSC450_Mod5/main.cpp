@@ -38,12 +38,28 @@ int main () {
             return 1;
         }
     
-    //ifstream originalFile (bc...)
-    //ofstream reversedFile (bc...)
+    //ifstream originalFile (ifstream to read data streams from files)
+    std::ifstream originalFile("CSC450_CT5_mod5.txt");
+    //ofstream reversedFile (ofstream to write data streams to files)
+    std::ofstream reversedFile("CSC450-mod5-reverse.txt");
+    
+    //error message (if originalFile doesn't open)
+    if (!originalFile.is_open()) {
+            cerr << "ERROR original file not opening \n";
+            return 1;
+        }
     
     //get contents of originalFile
+    //create new string "fileContents" which is the contents of the first file
+
     
     //add reversal method
+    
+    //error message (if resersedFile doesn't open)
+    if (!reversedFile.is_open()) {
+            cerr << "ERROR reversal file not opening \n";
+            return 1;
+        }
     
     //save reversed contents to reversedFile
     
