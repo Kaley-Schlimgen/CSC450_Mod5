@@ -62,7 +62,18 @@ int main () {
 
     
 //reversal method
+    cout << endl;
+    cout << "REVERSING CHARACTERS\n";
+
+    size_t length = fileContents.length();
+    for (size_t i = 0; i < length / 2; i++) {
+        char tempCharacter = fileContents[i];
+        fileContents[i] = fileContents[length - 1 - i];
+        fileContents[length - 1 - i] = tempCharacter;
+    }
     
+    
+//move fileContents to reversedFile
     cout << endl;
     cout << "TRANSFERING CONTENT TO NEW FOLDER\n";
     
