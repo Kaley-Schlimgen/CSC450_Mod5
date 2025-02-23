@@ -1,29 +1,36 @@
-//
-//  main.cpp
-//  CSC450_Mod5
-//
-//  Created by Kaley Schlimgen on 2/22/25.
-//
+/*
+ *  main.cpp
+ *  CSC450_Mod5
+ *
+ *  Created by Kaley Schlimgen on 2/22/25.
+ *
+ * Program:
+ * Create a C++ program that will obtain input from a user.
+ * Append the user's input into the provided .txt file.
+ * Create a reversal method that reverses all of the characters in
+ *      the provided .txt file.
+ * Store the result in a new .txt file.
+ *
+ */
 
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
 
-
 int main () {
-
     string userInput;
-    //ifstream providedFile;
     string filePath = "/Users/kaleyschlimgen/Desktop/CSC450_CT5_mod5.txt";
 
-//append the file
+    //Open provided file in append mode
     ofstream appendFile(filePath, ios::app);
     if (appendFile.is_open()) {
-            
+        
+        //Get user input
         cout <<"Enter input to add to file:\n";
         getline(cin, userInput);
-            
+          
+        //Add user input to file
         appendFile << "YOUR ADDED INPUT:\n";
         appendFile << userInput << endl;
                 
@@ -40,15 +47,15 @@ int main () {
         return 1;
     }
     
-    //open file and print contents and transfer contents to string fileContents
     
+    //Open providedFile
     ifstream providedFile(filePath);
     string fileContents;
     string line;
 
     if (providedFile.is_open()) {
         //copy providedFile's contents to string fileContents
-        //read the file contents
+        //print the file contents in the IDE output
         while (getline(providedFile, line)) {
             fileContents += line + '\n';
             cout << line << endl;
@@ -61,7 +68,7 @@ int main () {
     }
 
     
-//reversal method
+    //Create a reversal method for the characters
     cout << endl;
     cout << "REVERSING CHARACTERS\n";
 
@@ -73,15 +80,14 @@ int main () {
     }
     
     
-//move fileContents to reversedFile
     cout << endl;
     cout << "TRANSFERING CONTENT TO NEW FOLDER\n";
     
-//open reversedFile
+    //Open reversedFile
     string filePath2 = "/Users/kaleyschlimgen/Desktop/CSC450-mod5-reverse.txt";
     ofstream reversedFile(filePath2);
     
-//move fileContents to reversedFile
+    //Move the fileContents string to the new reversedFile
     if (reversedFile.is_open()) {
         reversedFile << fileContents;
         cout << endl;
@@ -93,8 +99,6 @@ int main () {
         cout << "Unable to open reversed file";
         return 1;
     }
-    
-    
     
     cout << endl;
     cout <<"Exiting Program\n";
